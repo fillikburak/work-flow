@@ -215,4 +215,20 @@ static void main(string[] args){
 }
 ```
 
+### Details With Reflection
+
+- You can get some informations with reflection like GetMethods, GetParameters, GetAttributes etc.
+
+```C#
+static void main(string[] args){
+  var type = typeOf(Operations);
+  var methods = type.GetMethods();
+  foreach(var method in methods){
+    foreach(var parameter in method.GetParameters()){
+      var parameterNames = parameter.Name;
+    }
+  }
+}
+```
+
 ----
