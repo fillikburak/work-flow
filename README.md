@@ -1,10 +1,11 @@
-**Table Of Contents**
 
-[TOC]
 
-#CSharp
-##Generics
-###Generic Structures
+# CSharp
+
+## Generics
+
+### Generic Structures
+
 - Make a generic structure:
 
 ```C#
