@@ -1,0 +1,5 @@
+List<string> result = BuildList<string>("a","b","c");
+
+public List<T> BuildList<T>(params T[] items){
+    return new List<T>(items)
+}
