@@ -164,3 +164,39 @@ class ToTableAttribute: Attribute{
 ```
 
 ----
+
+### Reflection
+
+- (Operations) casting object because Activator returning type of object
+- Activator.CreateInstance means you are creating an instance at run time same as Operations operations = new Operations()
+
+```C#
+static void main(string[] args){
+  var type = typeOf(Operations);
+  Operations operations = (Operations)Activator.CreateInstance(type, 6, 7);
+  Operations.Sum(4, 5);
+  Operations.Sum();
+}
+public class Operations {
+  private int _number1;
+  private int _number2;
+  public Operations(int number1, int number2){
+    _number1 = number1;
+    _number2 = number2;
+  }
+  public int Sum(int number1, int number2){
+    return number1 + number2;
+  }
+  public int Multiple(int number1, int number2){
+    return number1 * number2;
+  }
+  public int Sum(){
+    return _number1 + _number2;
+  }
+  public int Multiple(){
+    return _number1 + _number2;
+  }
+}
+```
+
+----
