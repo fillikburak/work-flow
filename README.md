@@ -33,8 +33,8 @@ class ProductDal : IProductDal{
 }
 ```
 
-----
-###Generic Methods
+### Generic Methods
+
 - Make a generic method
 
 ```C#
@@ -45,10 +45,14 @@ public List<T> BuildList<T>(params T[] items){
 }
 ```
 
-###Generic Limitations
+### Generic Limitations
+
 - where `T` : class means you are must be a reference type
+
 - `new()` means you have to renewable (e.g int is value type, string is reference type)
+
 - `IEntity` means you have to convertible to `IEntity` so you can create `IRepository<Student>` but cannot create `IRepository<IStudentDal>`
+
 - If u want to allow value types u can use `struct` keyword like : where `T` : `struct`
 
 
