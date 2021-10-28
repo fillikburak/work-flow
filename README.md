@@ -204,14 +204,14 @@ public class Operations {
 ### Info and Invoke
 
 - memberInfo just get an information of that instance that means you lost object instance
-- Invoke method started your memberInfo with your instance
+- Invoke method started your methodInfo with your instance
 
 ```C#
 static void main(string[] args){
   var type = typeOf(Operations);
   var instance = (Operations)Activator.CreateInstance(type, 6, 7);
-  MemberInfo memberInfo = instance.GetType().GetMethod("Sum2");
-  memberInfo.Invoke(instance, null);
+  MethodInfo methodInfo = instance.GetType().GetMethod("Sum2");
+  methodInfo.Invoke(instance, null);
 }
 ```
 
