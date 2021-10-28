@@ -108,6 +108,8 @@ class ProductDal : IEntity{
 
 ## Attributes
 
+### Create Attribute
+
 - Make an attribute
 
 ```C#
@@ -130,3 +132,35 @@ class ToTableAttribute: Attribute{
   }
 }
 ```
+
+### Attribute Targets & AllowMultiple
+
+- AttributeTargets can be used with parameters like Class, Field, Property etc.
+- AllowMultiple can be used with Multiple Attributes like this Customer class
+- Also AttributeTargets can be used with "|" multiple AttributeTargets like AttributeTargets.Property | AttributeTargets.Class
+
+```C#
+[ToTable("Customers")]
+[ToTable("tblCustomers")]
+class Customer{
+  public int Id { get; set; }
+  [RequiredProperty]
+  public string FirstName { get; set; }
+  public string LastName { get; set; }
+  public int Age { get; set; }
+}
+
+[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+class RequiredPropertyAttribute: Attribute{
+}
+
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+class ToTableAttribute: Attribute{
+  private string _tableName;
+  public ToTableAttribute(string tableName){
+    _tableName = tableName;
+  }
+}
+```
+
+----
