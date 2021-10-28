@@ -53,7 +53,7 @@ public List<T> BuildList<T>(params T[] items){
 
 - `IEntity` means you have to convertible to `IEntity` so you can create `IRepository<Student>` but cannot create `IRepository<IStudentDal>`
 
-- If u want to allow value types u can use `struct` keyword like : where `T` : `struct`
+- If you want to allow value types you can use `struct` keyword like : where `T` : `struct`
 
 
 ```C#
