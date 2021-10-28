@@ -167,6 +167,8 @@ class ToTableAttribute: Attribute{
 
 ## Reflection
 
+### Create Reflection
+
 - (Operations) casting object because Activator returning type of object
 - Activator.CreateInstance means you are creating an instance at run time same as Operations operations = new Operations()
 
@@ -196,6 +198,20 @@ public class Operations {
   public int Multiple(){
     return _number1 + _number2;
   }
+}
+```
+
+### Info and Invoke
+
+- memberInfo just get an information of that instance that means you lost object instance
+- Invoke method started your memberInfo with your instance
+
+```C#
+static void main(string[] args){
+  var type = typeOf(Operations);
+  var instance = (Operations)Activator.CreateInstance(type, 6, 7);
+  MemberInfo memberInfo = instance.GetType().GetMethod("Sum2");
+  memberInfo.Invoke(instance, null);
 }
 ```
 
