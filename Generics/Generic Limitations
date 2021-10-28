@@ -1,0 +1,45 @@
+interface IRepository<T> where T: class, IEntity, new()
+{
+  List<T> GetList();
+  T Get(int id);
+  void Add(T entity);
+  void Update(T entity);
+  void Delete(T entity);
+}
+
+interface IEntity{
+}
+
+interface IStudentDal : IRepository<Student>{
+}
+
+interface ICustomerDal : IRepository<Customer>{
+  void CustomMethod();
+}
+
+interface IProductDal : IRepository<Product>{  
+}
+
+class StudentDal : IStudentDal{
+  //methods
+}
+
+class CustomerDal : ICustomerDal{
+  //methods
+}
+
+class ProductDal : IProductDal{
+  //methods
+}
+
+class Student : IEntity{
+  //props
+}
+
+class CustomerDal : IEntity{
+  //props
+}
+
+class ProductDal : IEntity{
+  //props
+}
